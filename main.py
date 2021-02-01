@@ -1,7 +1,8 @@
+#importação da bibliotaca random e associando uma identificação a ela
 import random as rd
-
+#criação de uma variavel onde o modulo randint irá atribuir um valor aleatorio no intevalo de 1 a 20
 numSorte=rd.randint(1,20)
-
+#criação da função "palpite" para executar a avialção do valor e a escolha de continuar com o jogo
 def palpite(y,opc):
 
       if opc==0:
@@ -31,9 +32,12 @@ def palpite(y,opc):
 
 
 jogar=True
+#laço de repedição onde caso o usuario por engano digitar um valor Não numerico ocorrerá o tratamento
+# de exeção de erro de valor(ValueError)
 while jogar==True :
     try:
         x=int(input("insira o valor de 1  a 20(0 para encerrar)"))
+        #onde a função palpite é chamada
         jogar=palpite(numSorte,x)
 
     except ValueError:
